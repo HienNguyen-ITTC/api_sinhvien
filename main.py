@@ -8,7 +8,8 @@ import httpx
 import io 
 
 app = FastAPI()
-config = Cfg.load_config_from_name('vgg_transformer')
+# config = Cfg.load_config_from_name('vgg_transformer')
+config = Cfg.load_config_from_file('config.yml')
 config['cnn']['pretrained']=False
 config['device'] = 'cpu'
 detector = Predictor(config)
